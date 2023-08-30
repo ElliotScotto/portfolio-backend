@@ -41,7 +41,7 @@ app.post("/send-email", async (req, res) => {
       console.error("Erreur lors de l'envoi du mail:", error);
       res.status(500).send(error);
     } else {
-      console.log("Mail envoyé avec succès:", response);
+      console.log("Mail envoyé à Elliot !", response);
       res.send("Success");
     }
   });
