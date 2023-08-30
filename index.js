@@ -39,10 +39,10 @@ app.post("/send-email", async (req, res) => {
   smtpTransport.sendMail(mailOptions, (error, response) => {
     if (error) {
       console.error("Erreur lors de l'envoi du mail:", error);
-      res.status(500).send("Error");
+      res.status(500).json("error");
     } else {
       console.info("Mail envoyé avec succès:", response);
-      res.send("Success");
+      res.json("success");
     }
   });
 
