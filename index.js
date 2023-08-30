@@ -29,9 +29,10 @@ app.post("/send-email", async (req, res) => {
 
   let mailOptions = {
     from: data.email,
-    to: data.email,
-    subject: `[Portfolio]${data.name} : ${data.subject}`,
-    html: `
+    to: process.env.USER_EMAIL,
+    subject: `[Portfolio]${data.email} : ${data.subject}`,
+    html: `<p>De la part de <${data.name}><p>
+
             <p>${data.message}</p>
         `,
   };
