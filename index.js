@@ -32,7 +32,7 @@ app.post("/send-email", async (req, res) => {
     to: process.env.USER_EMAIL,
     subject: `[Portfolio]${data.subject}`,
     html: `
-            <p>De la part de ${data.name} (${data.email})...<br/><br/><br/>${data.message}</p>
+            <p>De la part de ${data.name} <${data.email}>...<br/><br/>${data.message}</p>
         `,
   };
 
