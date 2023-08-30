@@ -11,7 +11,6 @@ app.use(bodyParser.json());
 app.use(morgan("dev"));
 app.use(cors());
 
-const PORT = process.env.PORT || 3001;
 app.get("/", (req, res) => {
   res.send("Le serveur est en marche !");
 });
@@ -52,6 +51,7 @@ app.post("/send-email", async (req, res) => {
 app.get("*", (req, res) => {
   res.status(404).send("Page non trouvée !");
 });
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
